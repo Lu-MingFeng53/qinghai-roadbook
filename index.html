@@ -480,7 +480,7 @@ S.querySelectorAll('.seg,.bdg').forEach(function(e){e.classList.toggle('done',+e
 function say(t){if(st)st.textContent=t}
 if(dd<0)say('10/2 出发后按日期自动变绿');else if(done>=N)say('全程走完');else if(!done)say('今天 D1 · 按日期');else say('已走完 D1'+(done>1?'–D'+done:'')+' · 按日期');
 if(!navigator.geolocation||(document.featurePolicy&&!document.featurePolicy.allowsFeature('geolocation'))){say(st.textContent+' · 这个打开方式拿不到定位，只按日期变绿');return}
-navigator.geolocation.getCurrentPosition(function(pos){var lon=pos.coords.longitude,lat=pos.coords.latitude,base=st.textContent;
+var onPos=function(pos){var lon=pos.coords.longitude,lat=pos.coords.latitude,base=base0;
 var x=(lon-96.9)/(102.7-96.9)*800,y=(37.1-lat)/(37.1-33.9)*540,inmap=!(x<0||x>800||y<0||y>540);
 if(!inmap){say(base+' · 定位正常（人还不在图内）');return}
 var me=document.getElementById('rm-me'),ring=document.getElementById('rm-me-ring');me.setAttribute('cx',x);me.setAttribute('cy',y);ring.setAttribute('cx',x);ring.setAttribute('cy',y);me.style.display='inline';ring.style.display='inline';
@@ -488,7 +488,10 @@ if(!cur){say(base+' · 定位正常');return}
 var p=S.querySelector('.seg[data-day="'+cur+'"]');if(!p)return;var L=p.getTotalLength(),best=1e9,bl=0;
 for(var l=0;l<=L;l+=2){var q=p.getPointAtLength(l),dx=q.x-x,dy=q.y-y,dist=dx*dx+dy*dy;if(dist<best){best=dist;bl=l}}
 if(Math.sqrt(best)<28){var pr=S.querySelector('.prog[data-day="'+cur+'"]');pr.style.display='inline';pr.setAttribute('stroke-dasharray',bl.toFixed(1)+' '+(L+20).toFixed(1));say((done?'已走完 D1'+(done>1?'–D'+done:'')+'，':'')+'D'+cur+' 走到这（GPS）')}else say(base+' · 已定位');
-},function(e){say(st.textContent+(e.code==1?' · 定位被拒绝（手机设置里允许 Safari 定位）':' · 定位没成功'))},{enableHighAccuracy:true,timeout:10000,maximumAge:120000});})();</script>
+},onErr=function(e){say(base0+(e.code==1?' · 定位被拒绝（手机设置里允许 Safari 定位）':' · 定位没成功'))},base0=st.textContent,OPT={enableHighAccuracy:true,timeout:15000,maximumAge:60000};
+navigator.geolocation.getCurrentPosition(onPos,onErr,OPT);
+navigator.geolocation.watchPosition(onPos,function(){},OPT);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)navigator.geolocation.getCurrentPosition(onPos,function(){},OPT)});})();</script>
   </div>
   <div class="stats">
     <div class="stat"><div class="v">1 840<small> km</small></div><div class="k">自驾总里程</div></div>

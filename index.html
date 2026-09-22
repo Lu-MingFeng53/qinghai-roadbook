@@ -810,3 +810,12 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 <footer>黄河源荒野路书 · 路线 ② · 2026-09-21 版 · 里程为导航估算，价格为查询日价，下单前复核。</footer>
 </div>
 <script id="cpjs">document.addEventListener('click',function(e){var b=e.target.closest('[data-cp]');if(!b)return;var t=b.getAttribute('data-cp');function done(){var el=b.classList.contains('mcp')?b.querySelector('.nm'):b;var o=el.textContent;b.classList.add('ok');el.textContent='已复制';setTimeout(function(){el.textContent=o;b.classList.remove('ok')},1200)}function fb(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');done()}catch(_){}ta.remove()}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fb)}else fb()});</script>
+<style id="fix11">
+/* v11 显示修正 */
+.tl li * > b:first-child{position:static!important;left:auto;top:auto;font-family:inherit;font-size:inherit;font-weight:700;color:inherit}
+.v2.blk::after{position:static;right:auto;top:auto;margin-left:4px;vertical-align:super}
+.hcard{position:relative} .hcard:has(.cp){padding-bottom:38px}
+.hcard .hn .cp{position:absolute;right:12px;bottom:10px;margin-left:0}
+.daynav{top:0}
+.hn i{font:600 11px var(--mono);font-style:normal;letter-spacing:.06em;padding:1px 7px;border:1px solid var(--accent);border-radius:4px;vertical-align:middle;margin-left:8px}
+</style>

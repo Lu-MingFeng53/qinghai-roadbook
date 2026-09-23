@@ -510,7 +510,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
   <h2>2 到 4 个人，一辆底盘高的 SUV</h2>
   <p class="lede">人还没定齐，2 到 4 个都行——<b>这个数含 10/3 在大武会合的 1–2 位</b>（从定西北 / 敦煌过来）。房一律订<b>双床房</b>，两人一间，单出来的那位自己一间，谁跟谁一间到时候看，大武和玛多优先<b>弥散供氧房</b>。这条线的核心是海拔管理，人数多的好处是有人不舒服时另一个人能开车。</p>
   <div class="people">
-    <div class="pcard"><div class="n">10/3 加入的 1–2 位</div><ul><li><b>房间</b>：10/3、10/4 大武，10/5、10/6 玛多，10/7 共和，各<b>多订一间双床</b>（大武玛多仍要弥散供氧）；他们 10/3 自己在西宁住一晚</li><li><b>座位</b>：全队最多 4 人，SUV 连司机 5 个座，<b>坐得下</b>，后备箱也放得开</li><li><b>高反</b>：他们从低海拔直接上 3 750 m，没有我们前两天的过渡。当晚早睡，D3 上冰川前先看状态；乙酰唑胺按医生处方，剂量请遵医嘱</li><li>氧气罐按人头补，大武超市补够</li></ul></div>
+    <div class="pcard"><div class="n">10/3 加入的 1–2 位</div><ul><li><b>房间</b>：10/3、10/4 大武，10/5、10/6 玛多，10/7 共和，各<b>多订一间双床</b>（大武玛多仍要弥散供氧）；他们 10/3 自己在西宁住一晚</li><li><b>座位</b>：全队最多 4 人，SUV 连司机 5 个座，<b>坐得下</b>，后备箱也放得开</li><li><b>高反</b>：他们从低海拔直接上 3 750 m，没有我们前两天的过渡。当晚早睡，D3 上冰川前先看状态；乙酰唑胺按医生处方，剂量请遵医嘱</li><li>氧气罐按人头补，大武超市补够</li></ul><button class="rtbtn" onclick="document.getElementById('rtmodal').classList.add('on')">她从定西北过来的整条路线 →</button></div>
     <div class="pcard"><div class="n">2 人</div><ul><li>一间双床供氧房，想各住各的就两间</li><li>两人都得会开山路，D3 环山砂石路轮流开</li></ul></div>
     <div class="pcard"><div class="n">3 人</div><ul><li>两间房，2 + 1</li><li>三人轮开最稳，谁高反谁坐后排睡</li></ul></div>
     <div class="pcard"><div class="n">4 人</div><ul><li>两间双床供氧房，两两一间</li><li>氧气罐按人头买，每人 2 瓶</li><li>行李软包；后备箱留一格放水和干粮（3 天量）</li></ul></div>
@@ -827,3 +827,34 @@ body{overflow-x:clip}
 .day::before{content:"";display:block;height:18px;border-radius:0;margin:0 0 34px;margin-inline:calc(50% - 50vw);width:100vw;background-color:color-mix(in srgb,color-mix(in srgb,var(--accent) 22%,var(--tint)) 88%,var(--ink-2));background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(33,29,25,.09) 0 1px,transparent 1px 4px);box-shadow:inset 0 7px 9px -5px rgba(33,29,25,.42),inset 0 -6px 8px -5px rgba(33,29,25,.30)}
 .day .note{background:color-mix(in srgb,var(--surface) 55%,var(--page))}
 </style>
+<style id="rtcss">
+.rtbtn{margin-top:10px;font:600 12px var(--mono);color:var(--surface);background:var(--accent);border:0;border-radius:999px;padding:8px 14px;cursor:pointer;letter-spacing:.04em}
+.rtmodal{display:none;position:fixed;inset:0;z-index:200;background:rgba(33,29,25,.45);padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.rtmodal.on{display:block}
+.rtbox{max-width:560px;margin:24px auto;background:var(--page);border-radius:16px;padding:20px 18px 24px;position:relative;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.rtclose{position:absolute;right:12px;top:12px;font:600 12px var(--mono);color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:999px;padding:4px 12px;cursor:pointer}
+.rte{font:700 11px var(--mono);color:var(--accent);letter-spacing:.14em;margin-bottom:6px}
+.rth{font:600 19px/1.4 var(--display);color:var(--ink);margin:0 0 14px}
+.rtl{list-style:none;margin:0;padding:0}
+.rtl li{position:relative;padding:8px 0 8px 66px;font-size:14px;line-height:1.7;color:var(--ink-2);border-top:1px solid var(--line)}
+.rtl li>b:first-child{position:absolute;left:0;top:10px;font:600 12px var(--mono);color:var(--ink)}
+.rtl li.hl{color:var(--ink)}.rtl li.hl>b:first-child{color:var(--accent)}
+.rtn{margin-top:12px;padding:10px 12px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--surface) 55%,var(--page));border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-2)}
+.rtn b{color:var(--accent)}
+</style>
+<div id="rtmodal" class="rtmodal" onclick="if(event.target===this)this.classList.remove('on')">
+<div class="rtbox" role="dialog" aria-label="会合路线">
+<button class="rtclose" onclick="document.getElementById('rtmodal').classList.remove('on')">关闭</button>
+<div class="rte">会合路线</div>
+<h3 class="rth">定西北 → 西宁 → 玛沁，10/4 上午到</h3>
+<ol class="rtl">
+<li><b>10/3 下午</b>定西北上车，兰州西换乘，<b>约 1 小时 40 分</b>到西宁。当晚住西宁站边（全季酒店（西宁火车站店）<button class="cp" data-cp="全季酒店(西宁火车站店)">复制</button>），走路能到火车站</li>
+<li><b>10/4 07:30</b>出门打车去<b>西宁曹家堡机场</b><button class="cp" data-cp="西宁曹家堡国际机场">复制</button>，约 40 分钟，留够值机时间</li>
+<li class="hl"><b>09:05</b>东航 <b>MU9921</b> 西宁起飞 → <b>10:05 落果洛玛沁机场</b><button class="cp" data-cp="果洛玛沁机场">复制</button>（每天一班，1 小时；时刻为 2026 夏秋航季，出发前再核一次）</li>
+<li class="hl"><b>10:20</b>我们开车到<b>机场门口接</b>，直接上德马高速去阿尼玛卿。落地先在群里说一声</li>
+<li><b>当天</b>跟我们一起看冰川，17:50 回大武，住宜必思尚品酒店（果洛玛沁店）<button class="cp" data-cp="宜必思尚品酒店(果洛玛沁店)">复制</button>，晚饭一起吃</li>
+</ol>
+<div class="rtn"><b>没订到机票怎么办：</b>10/4 早 08:00 西宁南川西路客运站坐去大武的班车，约 9 小时，傍晚到镇上，我们 17:50 也回来了。</div>
+<div class="rtn"><b>如果改从敦煌走：</b>10/3 飞兰州中川（当晚住机场旁）→ 10/4 早 07:28 城际到兰州西 → 动车到西宁约 10:00，赶不上 09:05 的飞机，改坐 10:30 的班车，约 19:30 到大武，晚上会合。</div>
+<div class="rtn"><b>提醒：</b>身份证带好；厚外套上飞机就穿着，玛沁 3 750 m、白天也凉；<b>氧气罐不能过安检</b>，到西宁或大武再买；4 小时内从低海拔上到 3 750 m，落地别跑别扛重物，难受就说。</div>
+</div></div>

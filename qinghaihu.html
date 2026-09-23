@@ -510,7 +510,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
   <h2>2 到 4 个人，10/3 起再加 1–2 个，一辆底盘高的 SUV</h2>
   <p class="lede">人还没定齐，2 到 4 个都行；<b>10/3 晚在大武再会合 1–2 位</b>（从定西北 / 敦煌过来）。房一律订<b>双床房</b>，两人一间，单出来的那位自己一间，谁跟谁一间到时候看，大武和玛多优先<b>弥散供氧房</b>。这条线的核心是海拔管理，人数多的好处是有人不舒服时另一个人能开车。</p>
   <div class="people">
-    <div class="pcard"><div class="n">10/3 加入的 1–2 位</div><ul><li><b>房间</b>：10/3、10/4 大武，10/5、10/6 玛多，10/7 共和，各<b>多订一间双床</b>（大武玛多仍要弥散供氧）；他们 10/2 自己在西宁住一晚</li><li><b>座位</b>：SUV 连司机<b>只有 5 个座</b>。前四天我们这边超过 3 人的话，10/3 起就坐不下——要么这边控制在 3 人，要么他们自己开一辆跟着走，9/25 定人数时一并定</li><li><b>高反</b>：他们从低海拔直接上 3 750 m，没有我们前两天的过渡。当晚早睡，D3 上冰川前先看状态；乙酰唑胺按医生处方，剂量请遵医嘱</li><li>氧气罐按人头补，大武超市补够</li></ul></div>
+    <div class="pcard"><div class="n">10/3 加入的 1–2 位</div><ul><li><b>房间</b>：10/3、10/4 大武，10/5、10/6 玛多，10/7 共和，各<b>多订一间双床</b>（大武玛多仍要弥散供氧）；他们 10/2 自己在西宁住一晚</li><li><b>座位</b>：SUV 连司机 5 个座。我们这边 2 人 + 10/3 加入的 2 位 = <b>4 个人，坐得下</b>，后备箱也放得开。只有我们这边先满了 4 人、再加 2 位（6 人）才超，那就得多开一辆；9/25 定人数时一并定</li><li><b>高反</b>：他们从低海拔直接上 3 750 m，没有我们前两天的过渡。当晚早睡，D3 上冰川前先看状态；乙酰唑胺按医生处方，剂量请遵医嘱</li><li>氧气罐按人头补，大武超市补够</li></ul></div>
     <div class="pcard"><div class="n">2 人</div><ul><li>一间双床供氧房，想各住各的就两间</li><li>两人都得会开山路，D3 环山砂石路轮流开</li></ul></div>
     <div class="pcard"><div class="n">3 人</div><ul><li>两间房，2 + 1</li><li>三人轮开最稳，谁高反谁坐后排睡</li></ul></div>
     <div class="pcard"><div class="n">4 人</div><ul><li>两间双床供氧房，两两一间</li><li>氧气罐按人头买，每人 2 瓶</li><li>行李软包；后备箱留一格放水和干粮（3 天量）</li></ul></div>
@@ -823,6 +823,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 .hn i{font:600 11px var(--mono);font-style:normal;letter-spacing:.06em;padding:1px 7px;border:1px solid var(--accent);border-radius:4px;vertical-align:middle;margin-left:8px}
 /* v12 天卡片接缝（B1 浅米咖 · 麻布纹 · 凹缝）+ 别踩换米白 */
 .day{border-top:0;padding-top:34px;padding-bottom:10px}
-.day::before{content:"";display:block;height:18px;border-radius:9px;margin:0 0 34px;background-color:color-mix(in srgb,color-mix(in srgb,var(--accent) 22%,var(--tint)) 88%,var(--ink-2));background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(33,29,25,.09) 0 1px,transparent 1px 4px);box-shadow:inset 0 7px 9px -5px rgba(33,29,25,.42),inset 0 -6px 8px -5px rgba(33,29,25,.30)}
+body{overflow-x:clip}
+.day::before{content:"";display:block;height:18px;border-radius:0;margin:0 0 34px;margin-inline:calc(50% - 50vw);width:100vw;background-color:color-mix(in srgb,color-mix(in srgb,var(--accent) 22%,var(--tint)) 88%,var(--ink-2));background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(33,29,25,.09) 0 1px,transparent 1px 4px);box-shadow:inset 0 7px 9px -5px rgba(33,29,25,.42),inset 0 -6px 8px -5px rgba(33,29,25,.30)}
 .day .note{background:color-mix(in srgb,var(--surface) 55%,var(--page))}
 </style>

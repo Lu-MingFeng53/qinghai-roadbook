@@ -811,20 +811,6 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 <footer>黄河源荒野路书 · 路线 ② · 2026-09-21 版 · 里程为导航估算，价格为查询日价，下单前复核。</footer>
 </div>
 <script id="cpjs">document.addEventListener('click',function(e){var b=e.target.closest('[data-cp]');if(!b)return;var t=b.getAttribute('data-cp');function done(){var el=b.classList.contains('mcp')?b.querySelector('.nm'):b;var o=el.textContent;b.classList.add('ok');el.textContent='已复制';setTimeout(function(){el.textContent=o;b.classList.remove('ok')},1200)}function fb(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');done()}catch(_){}ta.remove()}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fb)}else fb()});</script>
-<style id="fix11">
-/* v11 显示修正 */
-.tl li * > b:first-child{position:static!important;left:auto;top:auto;font-family:inherit;font-size:inherit;font-weight:700;color:inherit}
-.v2.blk::after{position:static;right:auto;top:auto;margin-left:4px;vertical-align:super}
-.hcard{position:relative} .hcard:has(.cp){padding-bottom:38px}
-.hcard .hn .cp{position:absolute;right:12px;bottom:10px;margin-left:0}
-.daynav{top:0}
-.hn i{font:600 11px var(--mono);font-style:normal;letter-spacing:.06em;padding:1px 7px;border:1px solid var(--accent);border-radius:4px;vertical-align:middle;margin-left:8px}
-/* v12 天卡片接缝（B1 浅米咖 · 麻布纹 · 凹缝）+ 别踩换米白 */
-.day{border-top:0;padding-top:34px;padding-bottom:10px}
-body{overflow-x:clip}
-.day::before{content:"";display:block;height:18px;border-radius:0;margin:0 0 34px;margin-inline:calc(50% - 50vw);width:100vw;background-color:color-mix(in srgb,color-mix(in srgb,var(--accent) 22%,var(--tint)) 88%,var(--ink-2));background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(33,29,25,.09) 0 1px,transparent 1px 4px);box-shadow:inset 0 7px 9px -5px rgba(33,29,25,.42),inset 0 -6px 8px -5px rgba(33,29,25,.30)}
-.day .note{background:color-mix(in srgb,var(--surface) 55%,var(--page))}
-</style>
 <style id="rtcss">
 .rtbtn{margin-top:10px;font:600 12px var(--mono);color:var(--surface);background:var(--accent);border:0;border-radius:999px;padding:8px 14px;cursor:pointer;letter-spacing:.04em}
 .rtmodal{display:none;position:fixed;inset:0;z-index:200;background:rgba(33,29,25,.45);padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -856,3 +842,17 @@ body{overflow-x:clip}
 <div class="rtn"><b>如果改从敦煌走：</b>10/3 飞兰州中川（当晚住机场旁）→ 10/4 早 07:28 城际到兰州西 → 动车到西宁约 10:00，赶不上 09:05 的飞机，改坐 10:30 的班车，约 19:30 到大武，晚上会合。</div>
 <div class="rtn"><b>提醒：</b>身份证带好；厚外套上飞机就穿着，玛沁 3 750 m、白天也凉；<b>氧气罐不能过安检</b>，到西宁或大武再买；4 小时内从低海拔上到 3 750 m，落地别跑别扛重物，难受就说。</div>
 </div></div>
+<style id="fix11">
+/* v11 显示修正 */
+.tl li * > b:first-child{position:static!important;left:auto;top:auto;font-family:inherit;font-size:inherit;font-weight:700;color:inherit}
+.v2.blk::after{position:static;right:auto;top:auto;margin-left:4px;vertical-align:super}
+.hcard{position:relative} .hcard:has(.cp){padding-bottom:38px}
+.hcard .hn .cp{position:absolute;right:12px;bottom:10px;margin-left:0}
+.daynav{top:0}
+.hn i{font:600 11px var(--mono);font-style:normal;letter-spacing:.06em;padding:1px 7px;border:1px solid var(--accent);border-radius:4px;vertical-align:middle;margin-left:8px}
+/* v12 天卡片接缝（B1 浅米咖 · 麻布纹 · 凹缝）+ 别踩换米白 */
+.day{border-top:0;padding-top:34px;padding-bottom:10px}
+body{overflow-x:clip}
+.day::before{content:"";display:block;height:18px;border-radius:0;margin:0 0 34px;margin-inline:calc(50% - 50vw);width:100vw;background-color:color-mix(in srgb,color-mix(in srgb,var(--accent) 22%,var(--tint)) 88%,var(--ink-2));background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)' opacity='.55'/%3E%3C/svg%3E"),repeating-linear-gradient(0deg,rgba(255,255,255,.16) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(33,29,25,.10) 0 1px,transparent 1px 4px);background-size:160px 160px,auto,auto;background-blend-mode:overlay,normal,normal;box-shadow:inset 0 7px 9px -5px rgba(33,29,25,.42),inset 0 -6px 8px -5px rgba(33,29,25,.30)}
+.day .note{background:color-mix(in srgb,var(--surface) 55%,var(--page))}
+</style>

@@ -318,7 +318,7 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:1px;bac
 .rmap .rt{fill:none;stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
 .rmap .rt2{fill:none;stroke:var(--surface);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
 .rmap .rtb{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-dasharray:5 6;stroke-linecap:round;opacity:.85}
-.rmap .flow{fill:none;stroke:#E2703A;stroke-width:2.4;stroke-dasharray:9 20;stroke-linecap:round;opacity:1;animation:rm-flow 4s linear infinite}
+.rmap .flow{fill:none;stroke:var(--surface);stroke-width:1.4;stroke-dasharray:3 15;stroke-linecap:round;opacity:.9;animation:rm-flow 4s linear infinite}
 @keyframes rm-flow{to{stroke-dashoffset:-180}} @media(prefers-reduced-motion:reduce){.rmap .flow{animation:none}}
 .rmap .st{fill:var(--surface);stroke:var(--accent);stroke-width:2.2} .rmap .st.sl{fill:var(--accent)} .rmap .st.ed{fill:var(--ink);stroke:var(--ink)}
 .rmap .sn{font-family:var(--mono);font-size:9px;fill:var(--surface);font-weight:600;text-anchor:middle}
@@ -333,8 +333,8 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:1px;bac
 .rmap .leader{stroke:var(--ink-2);stroke-width:.7;stroke-dasharray:2 2;fill:none;opacity:.8}
 .rmap .frame{fill:none;stroke:var(--line);stroke-width:1}
 .rmap .rt.done,.rmap .rtb.done{stroke:#3E8E5A} .rmap .prog{fill:none;stroke:#3E8E5A;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;display:none}
-.rmap .rtback{fill:none;stroke:#E2703A;stroke-width:1.8;stroke-dasharray:4 5;stroke-linecap:round;opacity:.55}
-.rmap .rtbackflow{fill:none;stroke:#E2703A;stroke-width:2.4;stroke-dasharray:9 20;stroke-linecap:round;opacity:1;animation:rm-flowback 4s linear infinite}
+.rmap .rtback{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-dasharray:5 6;stroke-linecap:round;opacity:.85}
+.rmap .rtbackflow{fill:none;stroke:var(--surface);stroke-width:1.4;stroke-dasharray:3 15;stroke-linecap:round;opacity:.9;animation:rm-flowback 4s linear infinite}
 @keyframes rm-flowback{from{stroke-dashoffset:0}to{stroke-dashoffset:29}}
 @media (prefers-reduced-motion:reduce){.rmap .flow,.rmap .rtbackflow{animation:none;opacity:.35}}
 
@@ -484,7 +484,7 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:1px;bac
 <text class="legend" x="18" y="526">位置按经纬度落点 · 道路走向已简化 · 实线 = 单程，虚线 = 当天往返 · 黄点 = 点一下复制高德地址（站名下一行是会复制的名字）</text>
 <rect class="frame" x=".5" y=".5" width="799" height="539" rx="10"/>
 </svg>
-<div class="legend"><span><i style="background:var(--accent)"></i>过夜（点旁写住几晚）</span><span><i style="background:#E2703A"></i>橙红流动 = 走的方向</span><span><i style="background:#E2703A;opacity:.55"></i>下面那条 = 当天原路绕回来睡</span><span><i style="background:var(--ink)"></i>起终点</span><span><i style="background:var(--surface);border:2px solid var(--accent)"></i>途经</span><span><i style="background:var(--surface);border:1px solid var(--accent)"></i>湖泊</span><span><i style="background:#3E8E5A"></i>走过的</span><span><b style="display:inline-block;width:15px;height:15px;line-height:15px;text-align:center;border-radius:50%;background:var(--accent);color:#fff;font:700 10px var(--mono);margin-right:5px;vertical-align:-2px">3</b>圈中数字 = 第几天走的这段路</span><span><i style="background:#F5C542;border:1px solid #8A6D1A"></i><b style="color:var(--accent)">黄点 = 点一下复制导航地址</b></span><span id="rm-status" style="color:var(--accent)"></span></div>
+<div class="legend"><span><i style="background:var(--accent)"></i>过夜（点旁写住几晚）</span><span><i style="background:var(--accent);opacity:.85"></i>下面那条平行线 = 当天原路绕回来睡</span><span><i style="background:var(--ink)"></i>起终点</span><span><i style="background:var(--surface);border:2px solid var(--accent)"></i>途经</span><span><i style="background:var(--surface);border:1px solid var(--accent)"></i>湖泊</span><span><i style="background:#3E8E5A"></i>走过的</span><span><b style="display:inline-block;width:15px;height:15px;line-height:15px;text-align:center;border-radius:50%;background:var(--accent);color:#fff;font:700 10px var(--mono);margin-right:5px;vertical-align:-2px">3</b>圈中数字 = 第几天走的这段路</span><span><i style="background:#F5C542;border:1px solid #8A6D1A"></i><b style="color:var(--accent)">黄点 = 点一下复制导航地址</b></span><span id="rm-status" style="color:var(--accent)"></span></div>
 <script id="progjs">(function(){var S=document.querySelector('svg.rmap');if(!S)return;var st=document.getElementById('rm-status');
 var T0=new Date(2026,9,2),N=7,now=new Date(),dd=Math.floor((now-T0)/864e5);var done=dd<0?0:(dd>=N?N:dd),cur=(dd<0||dd>=N)?0:dd+1;
 S.querySelectorAll('.seg,.bdg,.rtback').forEach(function(e){e.classList.toggle('done',+e.dataset.day<=done)});
@@ -518,7 +518,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 .rmap .rt{fill:none;stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
 .rmap .rt2{fill:none;stroke:var(--surface);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
 .rmap .rtb{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-dasharray:5 6;stroke-linecap:round;opacity:.85}
-.rmap .flow{fill:none;stroke:#E2703A;stroke-width:2.4;stroke-dasharray:9 20;stroke-linecap:round;opacity:1;animation:rmb-flow 4s linear infinite}
+.rmap .flow{fill:none;stroke:var(--surface);stroke-width:1.4;stroke-dasharray:3 15;stroke-linecap:round;opacity:.9;animation:rmb-flow 4s linear infinite}
 @keyframes rmb-flow{to{stroke-dashoffset:-180}} @media(prefers-reduced-motion:reduce){.rmap .flow{animation:none}}
 .rmap .st{fill:var(--surface);stroke:var(--accent);stroke-width:2.2} .rmap .st.sl{fill:var(--accent)} .rmap .st.ed{fill:var(--ink);stroke:var(--ink)}
 .rmap .sn{font-family:var(--mono);font-size:9px;fill:var(--surface);font-weight:600;text-anchor:middle}
@@ -533,8 +533,8 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 .rmap .leader{stroke:var(--ink-2);stroke-width:.7;stroke-dasharray:2 2;fill:none;opacity:.8}
 .rmap .frame{fill:none;stroke:var(--line);stroke-width:1}
 .rmap .rt.done,.rmap .rtb.done{stroke:#3E8E5A} .rmap .prog{fill:none;stroke:#3E8E5A;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;display:none}
-.rmap .rtback{fill:none;stroke:#E2703A;stroke-width:1.8;stroke-dasharray:4 5;stroke-linecap:round;opacity:.55}
-.rmap .rtbackflow{fill:none;stroke:#E2703A;stroke-width:2.4;stroke-dasharray:9 20;stroke-linecap:round;opacity:1;animation:rm-flowback 4s linear infinite}
+.rmap .rtback{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-dasharray:5 6;stroke-linecap:round;opacity:.85}
+.rmap .rtbackflow{fill:none;stroke:var(--surface);stroke-width:1.4;stroke-dasharray:3 15;stroke-linecap:round;opacity:.9;animation:rm-flowback 4s linear infinite}
 @keyframes rm-flowback{from{stroke-dashoffset:0}to{stroke-dashoffset:29}}
 @media (prefers-reduced-motion:reduce){.rmap .flow,.rmap .rtbackflow{animation:none;opacity:.35}}
 
@@ -686,7 +686,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 <text class="legend" x="18" y="526">位置按经纬度落点 · 道路走向已简化 · 实线 = 单程，虚线 = 当天往返 · 黄点 = 点一下复制高德地址（站名下一行是会复制的名字）</text>
 <rect class="frame" x=".5" y=".5" width="799" height="539" rx="10"/>
 </svg>
-<div class="legend"><span><i style="background:var(--accent)"></i>过夜（点旁写住几晚）</span><span><i style="background:#E2703A"></i>橙红流动 = 走的方向</span><span><i style="background:#E2703A;opacity:.55"></i>下面那条 = 当天原路绕回来睡</span><span><i style="background:var(--ink)"></i>起终点</span><span><i style="background:var(--surface);border:2px solid var(--accent)"></i>途经</span><span><i style="background:var(--surface);border:1px solid var(--accent)"></i>湖泊</span><span><i style="background:#3E8E5A"></i>走过的</span><span><b style="display:inline-block;width:15px;height:15px;line-height:15px;text-align:center;border-radius:50%;background:var(--accent);color:#fff;font:700 10px var(--mono);margin-right:5px;vertical-align:-2px">3</b>圈中数字 = 第几天走的这段路</span><span><i style="background:#F5C542;border:1px solid #8A6D1A"></i><b style="color:var(--accent)">黄点 = 点一下复制导航地址</b></span><span id="rmb-status" style="color:var(--accent)"></span></div>
+<div class="legend"><span><i style="background:var(--accent)"></i>过夜（点旁写住几晚）</span><span><i style="background:var(--accent);opacity:.85"></i>下面那条平行线 = 当天原路绕回来睡</span><span><i style="background:var(--ink)"></i>起终点</span><span><i style="background:var(--surface);border:2px solid var(--accent)"></i>途经</span><span><i style="background:var(--surface);border:1px solid var(--accent)"></i>湖泊</span><span><i style="background:#3E8E5A"></i>走过的</span><span><b style="display:inline-block;width:15px;height:15px;line-height:15px;text-align:center;border-radius:50%;background:var(--accent);color:#fff;font:700 10px var(--mono);margin-right:5px;vertical-align:-2px">3</b>圈中数字 = 第几天走的这段路</span><span><i style="background:#F5C542;border:1px solid #8A6D1A"></i><b style="color:var(--accent)">黄点 = 点一下复制导航地址</b></span><span id="rmb-status" style="color:var(--accent)"></span></div>
 <script id="progjsb">(function(){var S=document.querySelectorAll('svg.rmap')[1];if(!S)return;var st=document.getElementById('rmb-status');
 var T0=new Date(2026,9,2),N=7,now=new Date(),dd=Math.floor((now-T0)/864e5);var done=dd<0?0:(dd>=N?N:dd),cur=(dd<0||dd>=N)?0:dd+1;
 S.querySelectorAll('.seg,.bdg,.rtback').forEach(function(e){e.classList.toggle('done',+e.dataset.day<=done)});

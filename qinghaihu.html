@@ -669,7 +669,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)navi
 <rect class="frame" x=".5" y=".5" width="799" height="539" rx="10"/>
 </svg>
 <div class="legend"><span><i style="background:var(--accent)"></i>过夜</span><span><i style="background:var(--ink)"></i>起终点</span><span><i style="background:var(--surface);border:2px solid var(--accent)"></i>途经</span><span><i style="background:var(--surface);border:1px solid var(--accent)"></i>湖泊</span><span><i style="background:#3E8E5A"></i>走过的</span><span><i style="background:#F5C542;border:1px solid #8A6D1A"></i><b style="color:var(--accent)">黄点 = 点一下复制导航地址</b></span><span id="rmb-status" style="color:var(--accent)"></span></div>
-<script id="progjsb">(function(){var S=document.querySelector('svg.rmap');if(!S)return;var st=document.getElementById('rmbb-status');
+<script id="progjsb">(function(){var S=document.querySelector('svg.rmap');if(!S)return;var st=document.getElementById('rmb-status');
 var T0=new Date(2026,9,2),N=7,now=new Date(),dd=Math.floor((now-T0)/864e5);var done=dd<0?0:(dd>=N?N:dd),cur=(dd<0||dd>=N)?0:dd+1;
 S.querySelectorAll('.seg,.bdg').forEach(function(e){e.classList.toggle('done',+e.dataset.day<=done)});
 function say(t){if(st)st.textContent=t}
@@ -678,7 +678,7 @@ if(!navigator.geolocation||(document.featurePolicy&&!document.featurePolicy.allo
 var onPos=function(pos){var lon=pos.coords.longitude,lat=pos.coords.latitude,base=base0;
 var x=(lon-96.9)/(102.7-96.9)*800,y=(37.1-lat)/(37.1-33.9)*540,inmap=!(x<0||x>800||y<0||y>540);
 if(!inmap){say(base+' · 定位正常（人还不在图内）');return}
-var me=document.getElementById('rmbb-me'),ring=document.getElementById('rmbb-me-ring');me.setAttribute('cx',x);me.setAttribute('cy',y);ring.setAttribute('cx',x);ring.setAttribute('cy',y);me.style.display='inline';ring.style.display='inline';
+var me=document.getElementById('rmb-me'),ring=document.getElementById('rmb-me-ring');me.setAttribute('cx',x);me.setAttribute('cy',y);ring.setAttribute('cx',x);ring.setAttribute('cy',y);me.style.display='inline';ring.style.display='inline';
 if(!cur){say(base+' · 定位正常');return}
 var p=S.querySelector('.seg[data-day="'+cur+'"]');if(!p)return;var L=p.getTotalLength(),best=1e9,bl=0;
 for(var l=0;l<=L;l+=2){var q=p.getPointAtLength(l),dx=q.x-x,dy=q.y-y,dist=dx*dx+dy*dy;if(dist<best){best=dist;bl=l}}
